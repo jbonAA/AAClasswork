@@ -5,6 +5,7 @@ class PolyTreeNode
         @parent = nil
         @children = []
     end
+    
 require "byebug"
     def parent=(new_parent)
         unless parent.nil?    
@@ -46,6 +47,24 @@ require "byebug"
             return res unless res.nil?
         end
         nil
+    end
+
+    def bfs(target_value)
+
+        queue = [self]
+
+        until queue.empty?
+            first = queue.shift
+            return first if first.value == target_value
+            first.children.each do |child|
+                queue << child
+            end
+        end
+
+
+        
+
+
     end
 
 
