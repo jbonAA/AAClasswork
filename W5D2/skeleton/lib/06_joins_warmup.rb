@@ -24,12 +24,7 @@ require_relative './sqlzoo.rb'
 
 def example_query
   execute(<<-SQL)
-    SELECT
-      *
-    FROM
-      movies
-    WHERE
-      title = 'Doctor No'
+   
   SQL
 end
 
@@ -42,6 +37,7 @@ def films_from_sixty_two
     movies
   WHERE
     movies.yr = 1962
+ 
   SQL
 end
 
@@ -54,6 +50,7 @@ def year_of_kane
     movies
   WHERE
     movies.title = 'Citizen Kane'
+
   SQL
 end
 
@@ -67,7 +64,7 @@ def trek_films
   FROM
     movies
   WHERE
-    movies.title LIKE 'Star Trek%'
+    movies.title LIKE ('%Trek%')
   ORDER BY
     movies.yr
   SQL
@@ -81,7 +78,8 @@ def films_by_id
   FROM
     movies
   WHERE
-    movies.id IN ('1119', '1595', '1768')
+    movies.id IN (1119, 1595, 1768)
+  
 
   SQL
 end
@@ -90,23 +88,26 @@ def glenn_close_id
   # What id number does the actress 'Glenn Close' have?
   execute(<<-SQL)
   SELECT
-    id
+    actors.id
   FROM
     actors
   WHERE
-    name = 'Glenn Close'
+    actors.name = 'Glenn Close'
+ 
   SQL
 end
 
 def casablanca_id
   # What is the id of the film 'Casablanca'?
   execute(<<-SQL)
+
   SELECT
-    id
+    movies.id
   FROM
     movies
   WHERE
-    title = 'Casablanca'
+    movies.title = 'Casablanca'
+ 
   SQL
 end
 
@@ -114,45 +115,40 @@ def casablanca_cast
   # Obtain the cast list for 'Casablanca'. Use the id value that you obtained
   # in the previous question directly in your query (for example, id = 1).
   execute(<<-SQL)
-    SELECT
-      actors.name
-    FROM
-      movies
-    JOIN castings
-      ON movies.id = castings.movie_id
-    JOIN actors
-      ON actors.id = castings.actor_id
-    WHERE
-      movies.id = (
-        SELECT
-          id
-        FROM
-          movies
-        WHERE
-          title = 'Casablanca'
-      )
+
+  SELECT
+    actors.name
+  FROM
+    actors
+  JOIN
+    castings ON actors.id = castings.actor_id
+  JOIN
+    movies ON castings.movie_id = movies.id
+  WHERE
+    movies.id IN (SELECT
+    movies.id
+  FROM
+    movies
+  WHERE
+    movies.title = 'Casablanca'
+ )
+   
   SQL
 end
 
 def alien_cast
   # Obtain the cast list for the film 'Alien'
   execute(<<-SQL)
-      SELECT
-      actors.name
-    FROM
-      movies
-    JOIN castings
-      ON movies.id = castings.movie_id
-    JOIN actors
-      ON actors.id = castings.actor_id
-    WHERE
-      movies.id = (
-        SELECT
-          id
-        FROM
-          movies
-        WHERE
-          title = 'Alien'
-      )
+  SELECT
+    actors.name
+  FROM
+    actors
+  JOIN
+    castings ON actors.id = castings.actor_id
+  JOIN
+    movies ON castings.movie_id = movies.id
+  WHERE
+    movies.title = 'Alien'
+     
   SQL
 end
