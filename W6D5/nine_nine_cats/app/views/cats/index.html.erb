@@ -1,0 +1,8 @@
+<a href="<%= new_cat_url %>">Create new cat!</a>
+<ul>
+  <% @all_cats.each do |cat|%>
+    <li> 
+      <a href="<%= cat_url(cat) %>"><%= cat[:name] %></a>
+    </li>
+  <% end %>
+</ul>
