@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyProjectName</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+  <%= flash[:errors] if flash[:errors] %>
+  <%= flash[:success] if flash[:success] %>
+  <form action="<%= new_user_url  %>" method='post'>
+  <input type="hidden" name="_method" value='delete'>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> 
+    <% if logged_in? %>
+      <input type="submit" value="logout">
+    <% else %>
+      <input type="submit" value="signup">
+    <% end %>
+  </form>
+  
+    <%= yield %>
+  </body>
+</html>
