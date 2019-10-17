@@ -1,0 +1,26 @@
+body {
+  text-align: center;
+}
+
+.hanoi {
+}
+
+h1 {
+  
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px;
+}
+li {
+  width: 100px;
+  margin: 50px;
+  padding: 50px;
+  background: gray;
+  border-bottom: 20px solid black;
+}
