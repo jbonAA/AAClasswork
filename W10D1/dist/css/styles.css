@@ -1,0 +1,125 @@
+
+html {
+  box-sizing: border-box;
+  background: #A9DBB8;
+  text-align: center;
+}
+
+h1 {
+  color: #F0F2EF;
+  font-family: 'helvetica neue';
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.welcome {
+  font-weight: 400;
+  margin-top: 100px;
+}
+
+.hidden {
+  display: none;
+}
+
+.toggle{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #a7d3b6;
+  margin-right: 50px;
+}
+
+.drop-down-dog-nav {
+  position: absolute;
+  right: 20px;
+  padding: 20px;
+  width: 250px;
+}
+
+.dropdown-show{
+  background-color: #a7d3b6;
+  flex-direction: column;
+  align-items: flex-end;
+  /* position: relative; */
+  width: 250px;
+  left: 90%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-decoration: unset;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  
+  /* justify-content: space-evenly; */
+
+}
+
+.welcome {
+  font-size: 20px;
+  align-items: center;
+  position: absolute;
+  width: 1000px
+}
+
+.clock-holder {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 23px;
+  width: 100px;
+  height: 25px;
+  border: 1px solid white;
+  padding: 20px;
+  left: 10%;
+  margin-top: 20px;
+}
+
+#party {
+  font-size: 60px;
+  text-decoration: bold;
+  color: white;
+}
+
+.todo-container{
+  bottom: 5px;
+  position: absolute;
+}
+
+body{
+  height: 1000px;
+  bottom: 10px;
+  
+}
+
+/*  Phase 4: Slide In & Out Classes */
+
+.align-left {
+  float: left;
+  margin-right: 20px;
+}
+
+.align-right {
+  float: right;
+  margin-left: 20px;
+}
+
+.slide {
+  opacity: 0;
+  transition: all .5s;
+}
+
+.align-left.slide {
+  transform: translateX(-30%) scale(0.95);
+}
+
+.align-right.slide {
+  transform: translateX(30%) scale(0.95);
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateX(0%) scale(1);
+}
