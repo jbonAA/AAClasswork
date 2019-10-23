@@ -1,0 +1,32 @@
+#root {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: auto;
+}
+
+.clock {
+  width: 500px;
+}
+
+.time{
+  display: flex;
+  justify-content: space-between;
+}
+
+.Date{
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.util {
+  border: 2px black solid;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: chocolate;
+  color: white;
+  font-size: 18px;
+}
