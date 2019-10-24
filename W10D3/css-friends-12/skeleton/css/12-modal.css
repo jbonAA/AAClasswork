@@ -1,0 +1,54 @@
+/* PHASE 12: Modal */
+.modal{
+  display: flex;
+  justify-content: center;
+}
+
+.modal-screen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-form{
+  position: absolute;
+  background: white;
+  width: 300px;
+  height: 250px;
+  margin: 0 0 20px 0;
+  margin: 20px 0 0 0;
+  padding: 20px;
+  
+}
+
+.email{
+  border: 1px solid black;
+ 
+}
+
+.butt{
+  background: green;
+  border: 1px solid black;
+  padding: 5px; 
+  margin-right: 10px;
+}
+
+.p{
+  
+}
+
+.hello{
+  font-size: 30px;
+}
+
+.low{
+  display: flex;
+  flex-direction: row;
+}
